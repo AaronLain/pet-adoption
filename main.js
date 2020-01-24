@@ -215,7 +215,7 @@ const buildPetCards = () => {
         for (pet in pets) {
             domString += '<div class="pet">';
             domString +=    `<header class="cardhead"><h2>${pets[pet].name}</h2></header>`;
-            domString +=    `<img src=${pets[pet].imageUrl}>`;
+            domString +=    `<img src=${pets[pet].imageUrl} alt="A lovely picture of ${pets[pet].name}">`;
             domString +=    `<p class="special-skill">${pets[pet].specialSkill}</p>`; 
             domString +=    `<footer class=${pets[pet].type}><h3>${pets[pet].type}</h3></footer>`
             domString += '</div>';
