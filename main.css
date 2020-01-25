@@ -1,5 +1,6 @@
 body {
     background-color: whitesmoke;
+    font-family: 'Bebas Neue', cursive;
 }
 
 h1 {
@@ -13,35 +14,46 @@ header.site-header {
     justify-content: space-around;
 }
 
-h3.dog-header {
-    text-align: center;
-    background-color: #5BB85B;
-    width: 6em;
-    height: 2em;
-    padding-top: .7em;
-    border-radius: .5em;
-    box-shadow: 2px 2px slategray;
+.filterInputs {
+    padding-bottom: 5px;
 }
 
-h3.cat-header {
-    text-align: center;
-    background-color: #5BC0DF;
-    width: 6em;
-    height: 2em;
-    padding-top: .7em;
-    border-radius: .5em;
-    box-shadow: 2px 2px slategray;
+.filterInputs input {
+    display: none;
 }
 
-h3.dino-header {
-    text-align: center;
-    background-color: #F0AD4D;
-    width: 6em;
-    height: 2em;
-    padding-top: .7em;
-    border-radius: .5em;
-    box-shadow: 2px 2px slategray;
+.filterInputs label  {
+    display: inline-block;
+    position: relative;
+    padding: 1em 2em;
+    cursor: pointer;
+    user-select: none; 
+    background-color: red;
 }
+
+
+.filterInputs i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 1px black;
+    z-index: -1;
+}
+
+.filterInputs label.dogs {
+    background: #5BB85B;
+}
+
+.filterInputs label.cats {
+    background: #5BC0DF;
+}
+
+.filterInputs label.dinos {
+    background: #F0AD4D;
+}
+
 
 .pet-main {
     display: flex;
@@ -49,7 +61,7 @@ h3.dino-header {
     justify-content: space-evenly;
 }
 
-.pet {
+.pets {
     border: 1px solid black;
     text-align: center;
     height: 30em;
@@ -60,14 +72,20 @@ h3.dino-header {
     justify-content: space-between;
     align-content: center;
     margin: 2em;
+    border-radius: 3em;
+    box-shadow: 2px 2px slategray
 }
 
-.pet p {
-    margin: 0 auto;
+.show {
+    display: flex;
 }
-.pet img {
+.pets p {
+    margin: 0 auto;
+    text-align: center;
+}
+.pets img {
     height: 15em;
-    width: 15em;
+    width: 17em;
     margin-top: 2em;
     box-shadow: 2px 2px slategray;
     align-self: center;
@@ -80,19 +98,36 @@ h3.dino-header {
     padding-top: .2em;
     justify-content: center;
     border-bottom: 1px solid black;
+    border-top-left-radius: 3em;
+    border-top-right-radius: 3em;
 }
 
 .dino {
     background-color: #F0AD4D;
     height: 3em;
+    border-bottom-left-radius: 3em;
+    border-bottom-right-radius: 3em;
 }
 
 .cat {
     background-color: #5BC0DF;
     height: 3em;
+    border-bottom-left-radius: 3em;
+    border-bottom-right-radius: 3em;
 }
 
 .dog {
     background-color: #5BB85B;
     height: 3em;
+    border-bottom-left-radius: 3em;
+    border-bottom-right-radius: 3em;
+}
+
+h3.dino {
+    text-align: center;
+    padding-bottom: 2em;
+}
+
+.is-hidden {
+    display: none;
 }

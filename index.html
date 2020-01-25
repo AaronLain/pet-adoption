@@ -6,14 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./main.css">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1 class="main-title">PET ADOPTION</h1>
     <header class="site-header">
-        <h3 class="cat-header">CAT</h3>
-        <h3 class="dog-header">DOG</h3>
-        <h3 class="dino-header">DINO</h3>
-    </header>
+        <div class="filterInputs">
+            <label><input type="radio" name="pet" value="" checked><i></i>All Animals!</label>
+            <label class="dogs"><input type="radio" name="pet" value="dog"><i></i>Dogs!</label>
+            <label class="cats"><input type="radio" name="pet" value="cat"><i></i>Cats!</label>
+            <label class="dinos"><input type="radio" name="pet" value="dino"><i></i>Dinos!</label>
+          </div>
+        </header>
     <main>
         <div class="pet-main" id="pet-cards"></div>
     </main>
