@@ -1,44 +1,43 @@
 body {
-    background-color: whitesmoke;
+    background-color: #DB78AB;
     font-family: 'Bebas Neue', cursive;
 }
 
 h1 {
     text-align: center;
+    color: white;
+    font-size: 400%;
 }
 
 header.site-header {
     text-align: center;
     display: flex;
-    flex-flow: row;
-    justify-content: space-around;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 .filterInputs {
-    padding-bottom: 5px;
+    padding: 1em;
+    justify-content: center;
 }
 
 .filterInputs input {
     display: none;
 }
 
-.filterInputs label  {
-    display: inline-block;
-    position: relative;
-    padding: 1em 2em;
+.filterInputs label {
+    text-align: justify;
+    margin: 4em;
+    padding: 1em 3em;
     cursor: pointer;
     user-select: none; 
-    background-color: red;
+    background-color: mediumorchid;
+    color: whitesmoke;
+    border-radius: 1em;
 }
 
 
 .filterInputs i {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    box-shadow: inset 0 0 0 1px black;
     z-index: -1;
 }
 
@@ -62,18 +61,17 @@ header.site-header {
 }
 
 .pets {
-    border: 1px solid black;
     text-align: center;
     height: 30em;
     width: 30em;
-    flex: 0 0 25%;
+    flex: 0 0 28%;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
     align-content: center;
     margin: 2em;
     border-radius: 3em;
-    box-shadow: 2px 2px slategray
+    background-color: rgb(247, 232, 173);
 }
 
 .show {
@@ -82,24 +80,23 @@ header.site-header {
 .pets p {
     margin: 0 auto;
     text-align: center;
+
 }
 .pets img {
     height: 15em;
     width: 17em;
-    margin-top: 2em;
-    box-shadow: 2px 2px slategray;
+    margin: .5em;
     align-self: center;
 }
 
 .cardhead {
-    background-color: mediumorchid;
+    background-color: #824670;
     height: 4em;
     text-align: center;
-    padding-top: .2em;
     justify-content: center;
-    border-bottom: 1px solid black;
     border-top-left-radius: 3em;
     border-top-right-radius: 3em;
+    color: whitesmoke;
 }
 
 .dino {
@@ -107,6 +104,7 @@ header.site-header {
     height: 3em;
     border-bottom-left-radius: 3em;
     border-bottom-right-radius: 3em;
+    color: whitesmoke;
 }
 
 .cat {
@@ -114,6 +112,7 @@ header.site-header {
     height: 3em;
     border-bottom-left-radius: 3em;
     border-bottom-right-radius: 3em;
+    color: whitesmoke;
 }
 
 .dog {
@@ -121,6 +120,7 @@ header.site-header {
     height: 3em;
     border-bottom-left-radius: 3em;
     border-bottom-right-radius: 3em;
+    color: whitesmoke;
 }
 
 h3.dino {
