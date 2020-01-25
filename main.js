@@ -172,7 +172,7 @@ const pets = [
     color: "Red",
     specialSkill: "Knows the words to 4 rap songs.",
     type: "cat",
-    imageUrl: "http://funbk.s3.amazonaws.com/wp-content/uploads/2016/06/funny-cat-video-which-will-make-you-laugh-louder.jpg"
+    imageUrl: "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
     },
     {
     name: "Bubba",
@@ -207,13 +207,13 @@ const pets = [
     color: "Red",
     specialSkill: "Doesn’t get weirded out by the word “moist.”",
     type: "dino",
-    imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
+    imageUrl: "https://api.time.com/wp-content/uploads/2018/06/dinosaurs-jurassic-world-fact-check-3.jpg?w=600&quality=85"
     }
 ];
 const buildPetCards = () => {
         let domString = '';
         for (pet in pets) {
-            domString += '<div class="pet">';
+            domString += `<div class="pets" data-filterable="${pets[pet].type}">`;
             domString +=    `<header class="cardhead"><h2>${pets[pet].name}</h2></header>`;
             domString +=    `<img src=${pets[pet].imageUrl} alt="A lovely picture of ${pets[pet].name}">`;
             domString +=    `<p class="special-skill">${pets[pet].specialSkill}</p>`; 
@@ -229,3 +229,32 @@ const buildPetCards = () => {
     }
 
 buildPetCards(pets);
+
+const el_filters = document.querySelectorAll('[name="pet"], [name="type"]'),
+    el_filterable = document.querySelectorAll('[data-filterable]');
+
+const applyFilter = () => {
+
+  // Filter checked inputs
+    const el_checked = [...el_filters].filter(el => el.checked && el.value);
+
+  // Collect checked inputs values to array
+    const filters = [...el_checked].map(el => el.value);
+
+  // Get elements to filter
+    const el_filtered = [...el_filterable].filter(el => {
+    const props = el.getAttribute('data-filterable').trim().split(/\s+/);
+    return filters.every(fi => props.includes(fi))
+});
+
+  // Hide all
+    el_filterable.forEach(el => el.classList.add('is-hidden'));
+
+  // Show filtered
+    el_filtered.forEach(el => el.classList.remove('is-hidden'));
+}
+
+// Assign event listener
+el_filters.forEach(el => el.addEventListener('change', applyFilter));
+// Init
+applyFilter();
