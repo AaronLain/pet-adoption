@@ -210,23 +210,36 @@ const pets = [
     imageUrl: "https://api.time.com/wp-content/uploads/2018/06/dinosaurs-jurassic-world-fact-check-3.jpg?w=600&quality=85"
     }
 ];
-const buildPetCards = () => {
-        let domString = '';
-        for (pet in pets) {
-            domString += `<div class="pets" data-filterable="${pets[pet].type}">`;
-            domString +=    `<header class="cardhead"><h2>${pets[pet].name}</h2></header>`;
-            domString +=    `<img src=${pets[pet].imageUrl} alt="A lovely picture of ${pets[pet].name}">`;
-            domString +=    `<p class="special-skill">${pets[pet].specialSkill}</p>`; 
-            domString +=    `<footer class=${pets[pet].type}><h3>${pets[pet].type}</h3></footer>`
-            domString += '</div>';
-        }
-        printToDom('pet-cards', domString);
-    };
+//const buildPetCards = () => {
+//        let domString = '';
+//        for (pet in pets) {
+//            domString += `<div class="pets" data-filterable="${pets[pet].type}">`;
+//            domString +=    `<header class="cardhead"><h2>${pets[pet].name}</h2></header>`;
+//            domString +=    `<img src=${pets[pet].imageUrl} alt="A lovely picture of ${pets[pet].name}">`;
+//            domString +=    `<p class="special-skill">${pets[pet].specialSkill}</p>`; 
+//            domString +=    `<footer class=${pets[pet].type}><h3>${pets[pet].type}</h3></footer>`
+//            domString += '</div>';
+//        }
+//        printToDom('pet-cards', domString);
+//    };
     
-    const printToDom = (divId, textToPrint) => {
-        const selectedDiv = document.getElementById(divId);
-        selectedDiv.innerHTML = textToPrint;
-    }
+const printToDom = (divId, textToPrint) => {
+    const selectedDiv = document.getElementById(divId);
+    selectedDiv.innerHTML = textToPrint;
+  }
+
+const buildPetCards =(petArray) => {
+  let domString = '';
+  petArray.forEach((pet) => {
+    domString += `<div class="pets" data-filterable="${pet.type}">`;
+    domString +=   `<header class="cardhead"><h2>${pet.name}</h2></header>`;
+    domString +=   `<img src=${pet.imageUrl} alt="A lovely picture of ${pet.name}">`;
+    domString +=   `<p class="special-skill">${pet.specialSkill}</p>`;
+    domString +=    `<footer class=${pet.type}><h3>${pet.type}</h3></footer>`;
+    domString += '</div>';
+    })
+  printToDom('pet-cards', domString);
+}
 
 buildPetCards(pets);
 
@@ -243,7 +256,7 @@ const applyFilter = () => {
 
   // Get elements to filter
     const el_filtered = [...el_filterable].filter(el => {
-    const props = el.getAttribute('data-filterable').trim().split(/\s+/);
+    const props = el.getAttribute('data-filterable').trim().split(" ");
     return filters.every(fi => props.includes(fi))
 });
 
