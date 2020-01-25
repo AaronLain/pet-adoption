@@ -19,6 +19,8 @@ header.site-header {
 .filterInputs {
     padding: 1em;
     justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .filterInputs input {
@@ -27,7 +29,7 @@ header.site-header {
 
 .filterInputs label {
     text-align: justify;
-    margin: 4em;
+    margin: 1em;
     padding: 1em 3em;
     cursor: pointer;
     user-select: none; 
@@ -36,10 +38,6 @@ header.site-header {
     border-radius: 1em;
 }
 
-
-.filterInputs i {
-    z-index: -1;
-}
 
 .filterInputs label.dogs {
     background: #5BB85B;
@@ -64,7 +62,7 @@ header.site-header {
     text-align: center;
     height: 30em;
     width: 30em;
-    flex: 0 0 28%;
+    flex: 1 0 28%;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
