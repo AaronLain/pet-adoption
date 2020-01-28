@@ -75,7 +75,7 @@ header.site-header {
     text-align: center;
     height: 30em;
     width: 30em;
-    flex: 1 0 28%;
+    flex: 0 0 28%;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
