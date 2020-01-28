@@ -13,44 +13,57 @@ header.site-header {
     text-align: center;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
-}
-
-.filterInputs {
-    padding: 1em;
-    justify-content: center;
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.filterInputs input {
-    display: none;
-}
-
-.filterInputs label {
-    text-align: justify;
-    margin: 1em;
-    padding: 1em 3em;
-    cursor: pointer;
-    user-select: none; 
-    background-color: mediumorchid;
-    color: whitesmoke;
-    border-radius: 1em;
+    justify-content: space-around;
 }
 
 
-.filterInputs label.dogs {
+.all-button {
+    background-color: crimson;
+    border-color: crimson;
+    width: 6em;
+    height: 4em;
+    margin-left: 5em;
+    margin-right: 5em;
+    border-radius: 1.2em;
+    font-size: 102%;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.dog-button {
     background: #5BB85B;
+    border-color: #5BB85B;
+    width: 6em;
+    height: 4em;
+    margin-left: 5em;
+    margin-right: 5em;
+    border-radius: 1.2em;
+    font-size: 102%;
+    font-family: 'Bebas Neue', cursive;
 }
 
-.filterInputs label.cats {
+.cat-button {
     background: #5BC0DF;
+    border-color: #5BC0DF;
+    width: 6em;
+    height: 4em;
+    margin-left: 5em;
+    margin-right: 5em;
+    border-radius: 1.2em;
+    font-size: 102%;
+    font-family: 'Bebas Neue', cursive;
 }
 
-.filterInputs label.dinos {
+.dino-button {
     background: #F0AD4D;
+    border-color: #F0AD4D;
+    width: 6em;
+    height: 4em;
+    margin-left: 5em;
+    margin-right: 5em;
+    border-radius: 1.2em;
+    font-size: 102%;
+    font-family: 'Bebas Neue', cursive;
 }
-
 
 .pet-main {
     display: flex;
@@ -72,9 +85,7 @@ header.site-header {
     background-color: rgb(247, 232, 173);
 }
 
-.show {
-    display: flex;
-}
+
 .pets p {
     margin: 0 auto;
     text-align: center;
@@ -124,8 +135,4 @@ header.site-header {
 h3.dino {
     text-align: center;
     padding-bottom: 2em;
-}
-
-.is-hidden {
-    display: none;
 }

@@ -210,19 +210,7 @@ const pets = [
     imageUrl: "https://api.time.com/wp-content/uploads/2018/06/dinosaurs-jurassic-world-fact-check-3.jpg?w=600&quality=85"
     }
 ];
-//const buildPetCards = () => {
-//        let domString = '';
-//        for (pet in pets) {
-//            domString += `<div class="pets" data-filterable="${pets[pet].type}">`;
-//            domString +=    `<header class="cardhead"><h2>${pets[pet].name}</h2></header>`;
-//            domString +=    `<img src=${pets[pet].imageUrl} alt="A lovely picture of ${pets[pet].name}">`;
-//            domString +=    `<p class="special-skill">${pets[pet].specialSkill}</p>`; 
-//            domString +=    `<footer class=${pets[pet].type}><h3>${pets[pet].type}</h3></footer>`
-//            domString += '</div>';
-//        }
-//        printToDom('pet-cards', domString);
-//    };
-    
+
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint;
@@ -235,39 +223,37 @@ const buildPetCards =(petArray) => {
     domString +=   `<header class="cardhead"><h2>${pet.name}</h2></header>`;
     domString +=   `<img src=${pet.imageUrl} alt="A lovely picture of ${pet.name}">`;
     domString +=   `<p class="special-skill">${pet.specialSkill}</p>`;
-    domString +=    `<footer class=${pet.type}><h3>${pet.type}</h3></footer>`;
+    domString +=   `<footer class=${pet.type}><h3>${pet.type}</h3></footer>`;
     domString += '</div>';
     })
   printToDom('pet-cards', domString);
+};
+
+const findPets = (e) => {
+  const buttonId = e.target.id;
+  const myPets = [];
+  if(buttonId === 'All') {
+    buildPetCards(pets);
+  } else {
+    for (let i = 0; i < pets.length; i++) {
+      if (pets[i].type === buttonId) {
+        myPets.push(pets[i]);
+      }
+    }
+    buildPetCards(myPets);
+  }
+};
+
+const events = () => {
+  document.getElementById('dog').addEventListener('click', findPets);
+  document.getElementById('cat').addEventListener('click', findPets);
+  document.getElementById('dino').addEventListener('click', findPets);
+  document.getElementById('All').addEventListener('click', findPets);
+};
+
+const init = () => {
+  buildPetCards(pets);
+  events();
 }
 
-buildPetCards(pets);
-
-const el_filters = document.querySelectorAll('[name="pet"], [name="type"]'),
-    el_filterable = document.querySelectorAll('[data-filterable]');
-
-const applyFilter = () => {
-
-  // Filter checked inputs
-    const el_checked = [...el_filters].filter(el => el.checked && el.value);
-
-  // Collect checked inputs values to array
-    const filters = [...el_checked].map(el => el.value);
-
-  // Get elements to filter
-    const el_filtered = [...el_filterable].filter(el => {
-    const props = el.getAttribute('data-filterable').trim().split(" ");
-    return filters.every(fi => props.includes(fi))
-});
-
-  // Hide all
-    el_filterable.forEach(el => el.classList.add('is-hidden'));
-
-  // Show filtered
-    el_filtered.forEach(el => el.classList.remove('is-hidden'));
-}
-
-// Assign event listener
-el_filters.forEach(el => el.addEventListener('change', applyFilter));
-// Init
-applyFilter();
+init();
