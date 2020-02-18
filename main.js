@@ -219,7 +219,7 @@ const printToDom = (divId, textToPrint) => {
 const buildPetCards =(petArray) => {
   let domString = '';
   petArray.forEach((pet) => {
-    domString += `<div class="pets" data-filterable="${pet.type}">`;
+    domString += `<div class="pets">`;
     domString +=   `<header class="cardhead"><h2>${pet.name}</h2></header>`;
     domString +=   `<img src=${pet.imageUrl} alt="A lovely picture of ${pet.name}">`;
     domString +=   `<p class="special-skill">${pet.specialSkill}</p>`;
